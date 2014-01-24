@@ -1,1 +1,13 @@
-Index
+%h1.text-center Table Tennis Ratings
+%br
+%br
+%table.table.table-striped.table-bordered.table-hover
+  %tr
+    %th Name
+    %th Rating
+    %th Latest Match
+  - @players.each do |p|
+    %tr
+      %td=p.name
+      %td=p.rating
+      %td=display_most_recent_match_result(p)
