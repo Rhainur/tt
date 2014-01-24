@@ -14,28 +14,28 @@
     %h3 Sets
     .form-group
       %label Game 1
-      = text_field_tag("player_1[game_1]", nil, {placeholder: "Player 1", class: "form-control"})
+      = text_field_tag("player_1_scores[game_1]", nil, {placeholder: "Player 1", class: "form-control"})
       %br
-      = text_field_tag("player_2[game_1]", nil, {placeholder: "Player 2", class: "form-control"})
+      = text_field_tag("player_2_scores[game_1]", nil, {placeholder: "Player 2", class: "form-control"})
     .form-group
       %label Game 2
-      = text_field_tag("player_1[game_2]", nil, {placeholder: "Player 1", class: "form-control"})
+      = text_field_tag("player_1_scores[game_2]", nil, {placeholder: "Player 1", class: "form-control"})
       %br
-      = text_field_tag("player_2[game_2]", nil, {placeholder: "Player 2", class: "form-control"})
+      = text_field_tag("player_2_scores[game_2]", nil, {placeholder: "Player 2", class: "form-control"})
     .form-group
       %label Game 3
-      = text_field_tag("player_1[game_3]", nil, {placeholder: "Player 1", class: "form-control"})
+      = text_field_tag("player_1_scores[game_3]", nil, {placeholder: "Player 1", class: "form-control"})
       %br
-      = text_field_tag("player_2[game_3]", nil, {placeholder: "Player 2", class: "form-control"})
+      = text_field_tag("player_2_scores[game_3]", nil, {placeholder: "Player 2", class: "form-control"})
     .form-group
       %label Game 4
-      = text_field_tag("player_1[game_4]", nil, {placeholder: "Player 1", class: "form-control"})
+      = text_field_tag("player_1_scores[game_4]", nil, {placeholder: "Player 1", class: "form-control"})
       %br
-      = text_field_tag("player_2[game_4]", nil, {placeholder: "Player 2", class: "form-control"})
+      = text_field_tag("player_2_scores[game_4]", nil, {placeholder: "Player 2", class: "form-control"})
     .form-group
       %label Game 5
-      = text_field_tag("player_1[game_5]", nil, {placeholder: "Player 1", class: "form-control"})
+      = text_field_tag("player_1_scores[game_5]", nil, {placeholder: "Player 1", class: "form-control"})
       %br
-      = text_field_tag("player_2[game_5]", nil, {placeholder: "Player 2", class: "form-control"})
+      = text_field_tag("player_2_scores[game_5]", nil, {placeholder: "Player 2", class: "form-control"})
     .form-group
       = submit_tag("Record", {class: "btn btn-primary"})
