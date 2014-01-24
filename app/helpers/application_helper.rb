@@ -54,4 +54,14 @@ module ApplicationHelper
       "<span class=\"glyphicon glyphicon-chevron-down\"></span> #{r.change.abs}".html_safe
     end
   end
+
+  def display_opponent(player, match)
+    id = nil
+    if(match.winner_id == player.id)
+      id = match.loser_id
+    else
+      id = match.winner_id
+    end
+    Player.find(id).name
+  end
 end

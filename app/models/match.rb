@@ -9,7 +9,7 @@ class Match < ActiveRecord::Base
   end
 
   def record_game(player_1, score_1, player_2, score_2)
-    unless(score_1 > 0 && score_2 > 0)
+    unless(score_1 > 0 || score_2 > 0)
       return
     end
 

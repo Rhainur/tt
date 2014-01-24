@@ -12,7 +12,7 @@
       %td
         %h4= match.match_date
       %td
-        %h4= Player.find(match.winner_id).name
+        %h4= display_opponent(@player, match)
       %td
         %h4= display_match_scores(@player, match)
       %td

@@ -11,7 +11,7 @@ class PagesController < ApplicationController
     if(request.post?)
       # Time to record a new match!
       match = Match.new
-      match.match_date = Date.parse(params[:match][:date])
+      match.match_date = Date.today#Date.parse(params[:match][:date])
       match.save
       
       # Grab the players
