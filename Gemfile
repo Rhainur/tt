@@ -33,3 +33,7 @@ group :doc do
 end
 
 gem 'haml-rails'
+
+group :development do
+  gem "better_errors"
+end
