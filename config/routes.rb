@@ -55,4 +55,6 @@ Tt::Application.routes.draw do
   #   end
 
   root "pages#index"
+
+  match "/record" => "pages#record", via: [:get, :post]
 end
