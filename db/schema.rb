@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140124092516) do
+ActiveRecord::Schema.define(version: 20140124123840) do
 
   create_table "games", force: true do |t|
     t.integer "match_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140124092516) do
     t.integer  "change"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "applied",    default: false
   end
 
   add_index "rating_changes", ["match_id"], name: "index_rating_changes_on_match_id", using: :btree
