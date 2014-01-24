@@ -6,8 +6,11 @@
     %th Name
     %th Rating
     %th Latest Match
+    %th View
   - @players.each do |p|
     %tr
       %td=p.name
       %td=p.rating
       %td=display_most_recent_match_result(p)
+      %td
+        = link_to "<span class=\"glyphicon glyphicon-user\"></span>".html_safe, "/players/#{p.id}"
