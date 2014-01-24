@@ -1,0 +1,21 @@
+%h2= @player.name
+
+%h3 Recent Matches
+%table.table.table-bordered.table-hover
+  %tr
+    %th Date
+    %th Opponent
+    %th Scores
+    %th Rating Change
+  - @player.recent_matches.each do |match|
+    %tr{class: [(:success if match.winner_id == @player.id),(:danger if match.loser_id == @player.id)]}
+      %td
+        %h4= match.match_date
+      %td
+        %h4= Player.find(match.winner_id).name
+      %td
+        %h4= display_match_scores(@player, match)
+      %td
+        %h4= display_rating_change(@player, match)
+
+

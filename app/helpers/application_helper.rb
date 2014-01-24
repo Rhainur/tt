@@ -15,4 +15,43 @@ module ApplicationHelper
     end
     s
   end
+
+  def display_match_scores(player, match)
+    game_scores = match.games.map{ |g| display_game_score(player, g) }
+    game_scores.join(' ').html_safe
+  end
+
+  def display_game_score(player, game)
+    self_score = 0;
+    opponent_score = 0;
+    game.scores.each do |s|
+      if s.player_id == player.id
+        self_score = s.score
+      else
+        opponent_score = s.score
+      end
+    end
+    str = "<span class=\"label "
+    if(self_score > opponent_score)
+      str.concat "label-success"
+    else
+      str.concat "label-danger"
+    end
+    str.concat "\">#{self_score} - #{opponent_score}</span>"
+    str
+  end
+
+  def display_rating_change(player, match)
+    r = nil
+    match.rating_changes.each do |rc|
+      if rc.player_id == player.id
+        r = rc
+      end
+    end
+    if r.change > 0
+      "<span class=\"glyphicon glyphicon-chevron-up\"></span> #{r.change}".html_safe
+    else
+      "<span class=\"glyphicon glyphicon-chevron-down\"></span> #{r.change.abs}".html_safe
+    end
+  end
 end

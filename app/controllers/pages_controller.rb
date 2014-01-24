@@ -3,6 +3,10 @@ class PagesController < ApplicationController
     @players = Player.all
   end
 
+  def player
+    @player = Player.find(params[:player_id])
+  end
+
   def record
     if(request.post?)
       # Time to record a new match!
