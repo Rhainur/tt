@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @players = Player.all
+    @players = Player.order("rating DESC")
   end
 
   def player
